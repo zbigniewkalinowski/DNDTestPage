@@ -1,4 +1,5 @@
 import { checkDragAndDrop } from "../utils/dndUtils";
+import credentials from "../../credentials.json";
 
 describe("DND Test Page", () => {
   it("Check DND in 3 container", () => {
@@ -11,13 +12,13 @@ describe("DND Test Page", () => {
 
   it("Check DND in saportal", () => {
     cy.visit(
-      "http://localhost:3000/SOLOCOOPREFIX/recommendation/feeds/418248,penthouse"
+      "https://m7be2a.solocoo.tv/m7be2asaportal/recommendation/feeds/418248,penthouse"
     );
-    cy.get('input[name="Email"]').type("zbigniew.kalinowski@oke.pl");
-    cy.get('input[name="Password"]').type("Zeppelin2020!");
+    cy.get('input[name="Email"]').type(credentials.email);
+    cy.get('input[name="Password"]').type(credentials.password);
     cy.get('[data-test-id="Login"]').click();
     checkDragAndDrop(
-      "Itemsinfeed(2)Container",
+      "Itemsinfeed(3)Container",
       "Bangbros Big Titty Black Beauties V3",
       "Anal Loving Euro Sluts"
     );
